@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
+
+body {
+  font-family: "Nova Square", sans-serif;
+  overflow: hidden;
+}
+
+#background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100vh;
+}
+
+#background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#background::after {
+  content: "";
+  width: inherit;
+  height: inherit;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    109deg,
+    rgba(10, 12, 16, 0.99) 15%,
+    rgba(10, 12, 16, 0.7) 50%,
+    rgba(10, 12, 16, 0.99) 85%
+  );
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  column-gap: 64px;
+  padding-top: 24px;
+  max-width: 1440px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  list-style: none;
+}
+
+.navigation_link {
+  font-size: 44px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  position: relative;
+  list-style: none;
+  text-decoration: none;
+  left: -13px;
+  color: white;
+}
+
+.navigation_link:hover {
+  color: red;
+}
+
+.navigation_link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 60%;
+  height: 1px;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s;
+}
+
+.navigation_link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.main_info {
+  width: 100%;
+  max-width: 570px;
+}
+
+.main_info p {
+  font-size: 18px;
+  margin: 20px 0 28px;
+  top: -600px;
+  left: 50px;
+  position: relative;
+  color: white;
+}
+
+.main_info div {
+  display: flex;
+  column-gap: 32px;
+}
+
+.imgperso-pequeno {
+  height: 440px;
+  left: 780px;
+  top: 90px;
+  position: relative;
+}
+
+.title {
+  color: #ff0000;
+  font-size: 5em;
+  line-height: 2.5em;
+  font-weight: 700;
+  margin: 20px 0 28px;
+  top: -550px;
+  left: 50px;
+  position: relative;
+  text-shadow: 0 0 10px rgb(255 0 0 / 46%), 0 0 20px rgb(255 0 0 / 47%),
+    0 0 30px rgb(255 0 0 / 49%);
+}
+
+h2 {
+  position: relative;
+  top: -620px;
+  left: 50px;
+  color: white;
+}
