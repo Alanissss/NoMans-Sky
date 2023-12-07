@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>No Man's Sky</title>
+      <link rel="stylesheet" href="/assets/css/style.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <link rel="icon" href="/assets/imgs/Shrek.png" type="image/x-icon">
+   </head>
+   <body>
+    <!--Página Inicial-->
+      <div id="page1" class="background-thesims">
+         <header>
+            <div class="container">
+               <nav class="fixed-menu">
+                  <div class="logo">
+                     <a href="index.html">NO MAN'S SKY</a>
+                  </div>
+                  <ul class="ul">
+                     <li><a href="https://www.nomanssky.com/"><button class="btn-gradiente">View About</button></a></li>
+                  </ul>
+               </nav>
+            </div>
+            <div class="container">
+               <div class="main-text">
+                  <h1 style="color: rgb(255, 255, 255);">No Man's Sky</h1>
+                  <p>"No Man's Sky" é um jogo de exploração e sobrevivência desenvolvido e publicado pela empresa britânica Hello Games. Lançado inicialmente em agosto de 2016, o jogo ganhou destaque por sua imensidão e abordagem inovadora de um universo virtual praticamente infinito.</p>
+                  <button class="botao-escolher" onclick="goToCharacterSelection()">Escolher Personagem</button>
+               </div>
+               <div class="main-img">
+                  <img style="width: 420px; height: 480px; left: 810px; position:fixed; top:167px;" src="/assets/imgs/apolo.png" alt="thesims-container">
+               </div>
+            </div>
+            </main>
+         </header>
+      </div>
+      <!--End página inicial-->
+
+      <!--Seção-escolher-personagem-->
+      <div id="page2" style="display: none;">
+         <!-- Cards dos personagens -->
+         <div class="card" >
+            <img src="/assets/imgs/apolo.png" style="height: 200px; width:200px;" alt="Personagem 1">
+            <h3>Personagem 1</h3>
+            <p>Vida: 520</p>
+            <p>Alegria: 582</p>
+            <p>Disposição: 210</p>
+            <p>Higiene: 200</p>
+            <p>Profissão: Médico</p>
+            <p>Bônus: Cura Rápida</p>
+            <label class="label" for="nomeApolo">Nome:</label>
+            <input type="text" id="nomeApolo" placeholder="Digite o nome" class="swal2-input">
+            <label class="label" for="idadeApolo">Faixa Etária:</label>
+            <select id="idadeApolo" class="swal2-select">
+               <option value="0-18">0-18 anos</option>
+               <option value="19-35">19-35 anos</option>
+               <option value="36-50">36-50 anos</option>
+               <option value="51+">51+ anos</option>
+            </select>
+            <button onclick="selectCharacter(Apolo, 'nomeApolo', 'idadeApolo')" class="botaoiniciar">Escolher</button>
+         </div>
+         <div class="card">
+            <img src="/assets/imgs/ares.png" style="height: 200px; width:200px;" alt="Personagem 2">
+            <h3>Personagem 2</h3>
+            <p>Vida: 582</p>
+            <p> Alegria: 375</p>
+            <p>Disposição: 210</p>
+            <p>Higiene: 100</p>
+            <p>Profissão: Artista</p>
+            <p>Bônus: Expressão Criativa</p>
+            <label class="label" for="nomeAres">Nome:</label>
+            <input type="text" id="nomeAres" placeholder="Digite o nome" class="swal2-input">
+            <label class="label" for="idadeAres">Faixa Etária:</label>
+            <select id="idadeAres" class="swal2-select">
+               <option value="0-18">0-18 anos</option>
+               <option value="19-35">19-35 anos</option>
+               <option value="36-50">36-50 anos</option>
+               <option value="51+">51+ anos</option>
+            </select>
+            <button onclick="selectCharacter(Ares, 'nomeAres', 'idadeAres')" class="botaoiniciar">Escolher</button>
+         </div>
+         <div class="card">
+            <img src="/assets/imgs/artemis.png" style="height: 200px; width:200px;" alt="Personagem 3">
+            <h3>Personagem 3</h3>
+            <p>Vida: 626</p>
+            <p>Alegria: 351</p>
+            <p>Disposição: 230</p>
+            <p>Higiene:  120</p>
+            <p>Profissão: Programadora</p>
+            <p>Bônus: Codificação Eficiente</p>
+            <label class="label" for="nomeArtemis">Nome:</label>
+            <input type="text" id="nomeArtemis" placeholder="Digite o nome" class="swal2-input">
+            <label class="label" for="idadeArtemis">Faixa Etária:</label>
+            <select id="idadeArtemis" class="swal2-select">
+               <option value="0-18">0-18 anos</option>
+               <option value="19-35">19-35 anos</option>
+               <option value="36-50">36-50 anos</option>
+               <option value="51+">51+ anos</option>
+            </select>
+            <button onclick="selectCharacter(Artemis, 'nomeArtemis', 'idadeArtemis')" class="botaoiniciar">Escolher</button>
+         </div>
+         <div class="card">
+            <img src="/assets/imgs/nada.png" style="height: 200px; width:200px;" alt="Personagem 4">
+            <h3>Personagem 4</h3>
+            <p>Vida: 604</p>
+            <p>Alegria: 303</p>
+            <p>Disposição: 220</p>
+            <p>Higiene: 150</p>
+            <p>Profissão: Atleta de Corrida</p>
+            <p>Bônus: Corre Rápido</p>
+            <label class="label" for="nomeNada">Nome:</label>
+            <input type="text" id="nomeNada" placeholder="Digite o nome" class="swal2-input">
+            <label class="label" for="idadeNada">Faixa Etária:</label>
+            <select id="idadeNada" class="swal2-select">
+               <option value="0-18">0-18 anos</option>
+               <option value="19-35">19-35 anos</option>
+               <option value="36-50">36-50 anos</option>
+               <option value="51+">51+ anos</option>
+            </select>
+            <button onclick="selectCharacter(Nada, 'nomeNada', 'idadeNada')" class="botaoiniciar">Escolher</button>
+         </div>
+      </div>
+      <!--End seção de escolha de personagens-->
+
+      <!-- Seção de Cenários -->
+      <div id="page3" style="display: none;">
+        <!--Cenário1-->
+         <div class="cenario" id="cenario1">
+            <div id="telaJogo1">
+               <div id="galaxy">
+                  <div class="bg"></div>
+                  <h1 class="line typing-animation">The beginning is the end, and the end is the beginning</h1>
+                  <img src="/assets/imgs/Shrek.png">
+                  <img class="shrekhorizontal" src="/assets/imgs/shrekhorizontal.png">
+                  <img src="/assets/imgs/donnie.png" style="left:550px;">
+                  <div class="stars-back"></div>
+                  <div class="stars-middle"></div>
+                  <div class="stars-front"></div>
+                  <div class="bg center"></div>
+               </div>
+               <img src="" id="foto">
+            </div>
+            <button class="btn-navegacao" onclick="navegarParaCenario(2)">Próximo Cenário</button>
+         </div>
+         <!--End cenário1-->
+
+         <!--Cenário2-->
+         <div class="cenario" id="cenario2" style="display: none;">
+            <div id="telaJogo2" class="containertelajogo2">
+               <div id="relogio"></div>
+               <div id="inventory">
+                  <h2>Personagem</h2>
+                  <div class="informacoesPersonagem"></div>
+               </div>
+               <div id="imagemContainer" onmouseover="iniciarCiclo('fraseContainer', 'minhaImagem1');" onmouseout="pararCiclo();">
+                  <img id="minhaImagem" style="top: 690px; left:350px" src="/assets/imgs/indo.png" alt="Minha Imagem">
+                  <div style="top: 610px; left:350px; z-index:2;" id="fraseContainer" class="escondido">TO INDO ALI</div>
+               </div>
+               <div id="imagemContainer2"onmouseover=" iniciarCiclo ('fraseContainer2', 'minhaImagem2');" onmouseout="pararCiclo(); ">
+                  <img id="minhaImagem" style="top: 448px;  left: -375px; height: 250px; " src="/assets/imgs/mago.png" alt="Minha Imagem">
+                  <div style="top: 475px; left:-350px" id="fraseContainer2" class="escondido"></div>
+               </div>
+               <p id="mensagemHigiene"></p>
+               <img src="/assets/imgs/Naveespace.png" style=" top: 45px; height: 300px; left: 55px; cursor:pointer;" onclick="naveespacial()">
+               <img src="/assets/imgs/esquilo.png" style="top: -632px; left: 117px; cursor: pointer" onclick="exibirModalDerrotaEsquilo()">
+               <img src="/assets/imgs/grimório .png" style="cursor: help; opacity: 0; top: -259px; left: 550px;" onclick="item1()">
+               <div id="inventory2">
+                  <h2>Npc</h2>
+                  <img id="imagemshrek" style="position: relative; left:10px; cursor:pointer;" src="/assets/imgs/shrekhorizontal.png"  onclick="npcShrek.falar()"> 
+                  <div class="npc">
+                     <p>Nome: ShrekAstro</p>
+                     <p>Idade: Desconhecida</p>
+                  </div>
+               </div>
+               <div id="falaNpcShrek"></div>
+               <img src="" id="foto">
+            </div>
+            <button class="btn-navegacao" onclick="navegarParaCenario(3)">Próximo Cenário</button>
+            <div class="conversa-decisao" id="conversa">
+            </div>
+         </div>
+         <!--End cenário2-->
+
+         <!--Cenário3-->
+         <div class="cenario" id="cenario3" style="display: none;">
+            <div id="background">
+               <video loop autoplay muted>
+                  <source src="/assets/video/theuniverse.mp4" type="video/mp4">
+               </video>
+            </div>
+            <div id="telaJogo3">
+               <div id="inventory">
+                  <h2>Personagem</h2>
+                  <div class="informacoesPersonagem" style="position: relative;"></div>
+               </div>
+               <div id="falaNpcBlasphemous"></div>
+               <div id="inventory3">
+                  <h2>Npc</h2>
+                  <img style="position: relative; left:10px; width:200px; cursor: pointer" src="/assets/imgs/feio.png" onclick="npcBlasphemous.falar()"> 
+                  <div class="npc">
+                     <p>Nome: Blasphemous</p>
+                     <p>Idade: 135</p>
+                  </div>
+               </div>
+               <div id="falaNpcPassaro"></div>
+               <img src="/assets/imgs/plataforma-removebg-preview.png" style="top: -50px; height: 350px; position: relative;">
+               <img src="/assets/imgs/pássaro .png" style="    top: -154px; left: -390px; height: 300px; cursor: pointer;" onclick="npcPassaro.falar()">
+            </div>
+            <button class="btn-navegacao" onclick="navegarParaCenario(4)">Próximo Cenário</button>
+            <div class="conversa-decisao" id="conversa2">
+            </div>
+         </div>
+         <!--End cenário3-->
+
+         <!--Cenário4-->
+         <div class="cenario" id="cenario4" style="display: none;">
+            <div id="telaJogo4" style="background-image: url('/assets/imgs/planetanovo.jpg');">
+               <div id="inventory">
+                  <h2>Personagem</h2>
+                  <div class="informacoesPersonagem"></div>
+               </div>
+               <div id="falaNpcAzazel"></div>
+               <div id="inventory4">
+                  <h2>Npc</h2>
+                  <img style="position: relative; left:10px; width:200px; cursor: pointer;" src="/assets/imgs/caveira.png" onclick="npcAzazel.falar()"> 
+                  <p>Nome: Azazel</p>
+                  <p>Idade: 955</p>
+               </div>
+               <div id="falaNpcSheldon"></div>
+               <img src="/assets/imgs/vykines.png" style=" top: 218px; left: -390px; height: 300px; cursor: pointer;" onclick="npcSheldon.falar()">
+               <img src="" id="foto">
+               <img class="water" src="/assets/imgs/Naveespace.png" style="cursor: grab; top: -125px; left: -50px; opacity: 0" onclick="tomarbanho()">
+               <img class="item2" src="/assets/imgs/esquilo.png" style=" top: -515px; left: 350px; opacity: 0;cursor: help" onclick="aranha()">
+            </div>
+            <button class="btn-navegacao4" onclick="navegarParaCenario(1)"> Voltar pro Inicío</button>
+            <div class="conversa-decisao4" id="conversa3">
+            </div>
+         </div>
+      </div>
+      <!--End cenário2-->
+      
+      <!--Script-->
+      <script>
+         class NPC {
+             constructor(nome, mensagens) {
+                 this.nome = nome;
+                 this.mensagens = mensagens;
+             }
+         
+             falar(personagem) {
+                 var falaElement = document.getElementById(`falaNpc${this.nome}`);
+                 var mensagemAleatoria = this.mensagens[Math.floor(Math.random() * this.mensagens.length)];
+         
+            
+                 if (PersonagemSelecionado.higiene <= 90) {
+                     const mensagensAdicionais = ["Você está fedendo!", "Fedorento", "Sai daqui seu fedido"];
+                     mensagemAleatoria = mensagensAdicionais[Math.floor(Math.random() * mensagensAdicionais.length)];
+                 }
+         
+                 falaElement.innerHTML = `${this.nome}: ${mensagemAleatoria}`;
+                 falaElement.style.display = "block";
+         
+                 setTimeout(function () {
+                     falaElement.style.display = "none";
+                 }, 5000);
+             }
+         }
+         
+         //Falas NPCS
+         var npcBlasphemous = new NPC("Blasphemous", [
+         "Olá, tudo bem? Me chamo Blasphemous, você parece ser novo por aqui...",
+         "Temos muitos planetas pra você explorar por aqui na galáxia de Newns",
+         "Seja Bem Vindo"
+         ]);
+         
+         var npcShrek = new NPC("Shrek", [
+         "O UNIVERSO É ALGO MUITO VASTO!!!",
+         "Não se prenda as coisas do mundo"
+         ]);
+         
+         var npcPassaro = new NPC("Passaro", [
+         "Você sabia que o universo está em constante expansão desde o Big Bang, que ocorreu há aproximadamente 13,8 bilhões de anos. Isso significa que as galáxias estão se afastando umas das outras ao longo do tempo.",
+         "Você sabia que estima-se que existam cerca de 100 bilhões de galáxias no universo observável. Cada galáxia pode conter milhões ou bilhões de estrelas.",
+         "Você sabia que a luz do Sol leva cerca de 8 minutos e 20 segundos para alcançar a Terra. Para chegar a Plutão, a luz do Sol leva cerca de 5 horas e 30 minutos."
+         ]);
+         
+         var npcSheldon = new NPC("Sheldon", [
+         "Não gaste toda a água",
+         "Infelizmente você irá sujar todo o lago com sua sujeira",
+         "Seja bem vindo a Shenz de qualquer forma" 
+         ]);
+          
+         var npcAzazel = new NPC("Azazel", [
+         "Olá, me chamo Azazel, prazer em te conhecer",
+         "Estou vivo a tanto tempo. . .",
+         "Você já se perguntou o que está além do nosso alcance luminoso?",
+         "Às vezes, imagino se existem mundos onde a noite é eterna, e a escuridão é sua própria constelação."
+         ]);
+         
+         let PersonagemSelecionado = null;
+         let CenarioAtual = 1;
+         
+         const Personagem = function() {
+           this.nome = "nome padrão";
+           this.vida = 1000;
+           this.alegria = 200;
+           this.disposicao = 150;
+           this.imagem = "assets/p1.jpg";
+         }
+         
+         let Nada = new Personagem();
+         
+         Nada.vida = 604;
+         Nada.alegria = 303;
+         Nada.disposicao = 220;
+         Nada.higiene = 250;
+         Nada.imagem = "assets/imgs/nada.png";
+         
+         let Artemis = new Personagem();
+         
+         Artemis.vida = 626;
+         Artemis.alegria = 351;
+         Artemis.disposicao = 230;
+         Artemis.higiene = 250;
+         Artemis.imagem = "assets/imgs/artemis.png";
+         
+         let Ares = new Personagem();
+         
+         Ares.vida = 582;
+         Ares.alegria = 375;
+         Ares.disposicao = 210;
+         Ares.higiene = 200;
+         Ares.imagem = "assets/imgs/ares.png";
+         
+         let Apolo = new Personagem();
+         
+         Apolo.vida = 520;
+         Apolo.alegria = 582;
+         Apolo.disposicao = 210;
+         Apolo.higiene = 200;
+         Apolo.imagem = "assets/imgs/apolo.png";
+         
+         //Função de ir paras páginas
+         function goToCharacterSelection() {
+            
+             document.getElementById('page1').style.display = 'none';
+             document.getElementById('page2').style.display = 'block';
+             document.getElementById('page3').style.display = 'none';
+         }
+         
+         //Função de selecionar personagem
+         function selectCharacter(personagem, nomeId, idadeId) {
+            
+             const nomeCampo = document.getElementById(nomeId).value;
+             const idadeCampo = document.getElementById(idadeId).value;
+             document.getElementById('foto').src=personagem.imagem;
+          
+             
+             if (nomeCampo.trim() === "" || idadeCampo.trim() === "") {
+                 var mensagem = "Por favor, preencha o nome e a idade antes de escolher o personagem.";
+             
+         
+                 var alertaPersonalizado = document.createElement("div");
+                 alertaPersonalizado.style.position = "fixed";
+                 alertaPersonalizado.style.top = "50%";
+                 alertaPersonalizado.style.left = "50%";
+                 alertaPersonalizado.style.transform = "translate(-50%, -50%)";
+                 alertaPersonalizado.style.padding = "20px";
+                 alertaPersonalizado.style.backgroundColor = "rgb(136, 0, 255)";
+                 alertaPersonalizado.style.color = "#fff";
+                 alertaPersonalizado.style.borderRadius = "10px";
+                 alertaPersonalizado.innerHTML = mensagem;
+             
+             
+                 document.body.appendChild(alertaPersonalizado);
+             
+                
+                 setTimeout(function() {
+                     document.body.removeChild(alertaPersonalizado);
+                 }, 3000);
+             
+                 return;
+             }
+             
+             personagem.nome = nomeCampo;
+             personagem.idade = idadeCampo;
+           
+             document.getElementById("page2").style.display = "none";
+         
+             document.getElementById("page3").style.display = "block";
+             PersonagemSelecionado = personagem;
+             setupGame();
+         }
+         
+         //Função de chamar o personagem para pág atual
+         function escolherPersonagem(personagem) {
+             PersonagemSelecionado = personagem;
+             setupGame(CenarioAtual);
+           }
+         
+         //Função de mostarr atributos personagens
+         function showCharacterAttributes(personagem) {
+             document.getElementById("page2").style.display = "none";
+             document.getElementById("page3").style.display = "block";
+             PersonagemSelecionado = personagem;
+             setupGame();
+            
+         }
+         
+         //Função de mostrar foto na página
+         function setupGame() {
+             
+             const telaJogoElement = document.getElementById("telaJogo2");
+         
+             document.getElementById("foto").src = PersonagemSelecionado.imagem;
+           
+           }
+         
+        //Nossa tela HUD
+         function hud(){
+             const telaJogoElement = document.getElementById(`telaJogo${CenarioAtual}`);
+         
+             const informacoesPersonagemElement = telaJogoElement.querySelector('.informacoesPersonagem');
+             console.log(informacoesPersonagemElement)
+         
+         
+             informacoesPersonagemElement.innerHTML = `<img src="${PersonagemSelecionado.imagem}" class="img-fluid" alt="${PersonagemSelecionado.nome}">`;
+         
+            
+             informacoesPersonagemElement.innerHTML += `<div> <p>Nome: ${PersonagemSelecionado.nome}</p>
+                                     <p>Idade: ${PersonagemSelecionado.idade}</p>
+                                     <p>Vida: ${PersonagemSelecionado.vida}</p>
+                                     <p>Alegria: ${PersonagemSelecionado.alegria}</p>
+                                     <p>Disposição: ${PersonagemSelecionado.disposicao}</p>
+                                     <p>Higiene: ${PersonagemSelecionado.higiene}</p></div>`;
+           }
+           
+        //Função de navegar para próximo cenário
+         function navegarParaCenario(proximoCenario) {
+          
+             document.getElementById(`cenario${CenarioAtual}`).style.display = 'none';
+            
+         
+             CenarioAtual = proximoCenario;
+         
+         
+             document.getElementById(`cenario${CenarioAtual}`).style.display = 'block';
+         
+            
+             mostrarInformacoesPersonagem(CenarioAtual);
+             
+             if (2 == proximoCenario){
+                 story()
+             } else if (3 == proximoCenario) {
+                 story2()
+             } else if (4 == proximoCenario){
+                 story3()
+             }
+            
+         }
+         
+         //Mostar informações no cenário
+         function mostrarInformacoesPersonagem(cenario) {
+             const telaJogoElement = document.getElementById(`telaJogo${cenario}`);
+         
+             const informacoesPersonagemElement = telaJogoElement.querySelector('.informacoesPersonagem');
+         
+             informacoesPersonagemElement.innerHTML = `<img src="${PersonagemSelecionado.imagem}" class="img-fluid" alt="${PersonagemSelecionado.nome}">`;
+         
+             const infoElement = document.createElement("div");
+             infoElement.innerHTML = `<p>Nome: ${PersonagemSelecionado.nome}</p><p>Idade: ${PersonagemSelecionado.idade}</p>`;
+             informacoesPersonagemElement.appendChild(infoElement);
+         }
+         
+        //Função SeatInterval      
+         function obterHoraAtual() {                
+                             const dataAtual = new Date();
+                             const horas = dataAtual.getHours().toString().padStart(2, '0');
+                             const minutos = dataAtual.getMinutes().toString().padStart(2, '0');
+                             const segundos = dataAtual.getSeconds().toString().padStart(2, '0');
+                             return `${horas}:${minutos}:${segundos}`;
+                         }
+                 
+        //Atualizar Relogio
+         function atualizarRelogio() {                
+                             const relogioElemento = document.getElementById('relogio');
+                             relogioElemento.textContent = obterHoraAtual();
+         
+                             PersonagemSelecionado.vida --;
+                             PersonagemSelecionado.higiene --;
+                            
+                             if(PersonagemSelecionado.vida < 0 || PersonagemSelecionado.higiene < 0){
+                                 document.location="/derrota.html";
+                             } else if (PersonagemSelecionado.higiene == 90 ) {
+                                 const mensagemHigieneElemento = document.getElementById('mensagemHigiene');
+                                 Swal.fire({
+                                     title: 'Atenção',
+                                     text: 'Sua higiene está baixa! Vá imediatamente a procura de água',
+                                     icon: 'warning',
+                                     timer: 5000, 
+                                     showConfirmButton: false
+                                 });
+                                 alertaHigieneExibido = true;
+                             }
+                             hud();
+                         }
+         
+         setInterval(atualizarRelogio, 1000);
+         
+         atualizarRelogio();                                                                       
+        
+        //História 1
+         function story () {
+             const conversaElement = document.getElementById("conversa");
+                             const phrases = [
+                               "Você pousa sua nave em um novo planeta, por conta de um sinal estranho vindo dele. . . ",
+                               "Desconhecido: ኃጢአተኛ ነፍስህ ከመዳን",
+                               "Personagem: Mas o que é isso. . .???",
+                               "ShrekAstro: Não dê atenção a esse mago meu caro, só perderá seu tempo. . .",
+                               "ObjetoAzulEstranho: ህ ከማንኛውም ተልእኮ የላቀ ስለሆነ ፣ መጨረሻው ቀርቧል ፣ የኃጢአት መርከቦች ",
+                               "ShrekAstro: E nem para esse esquisito baixinho",
+                               "ShrekAstro: Viajante intergaláctico perdido nas estrelas, tua nave brilha como um farol no vazio cósmico.",
+                               "Desconhecido: በላይ ናት እናም ሰላምን ወ",
+                               "Personagem: Estou à deriva, buscando respostas em cada pulsar e ruído do espaço.",
+                               "Desconhecido: ይም ሥቃይን",
+                               "ShrekAstro: Teu destino está entrelaçado com a malha do Atlas. Diante de ti, dois portais se materializam. Um leva à riqueza, o outro ao desconhecido.",
+                               "ObjetoAzulEstranho: ኃጢአተኛ ነፍስህ ከመዳን በላይ ናት እናም ሰላምን ወይም ሥቃይን አታውቅም ፣",
+                               "Desconhecido: አታውቅም ፣ የንስሐ",
+                               "Personagem: Riqueza ou mistério? Cada escolha reverbera pelo meu traje exoespacial.",
+                               "ShrekAstro:... explore a floresta e vá em busca de seu destino.. ",
+                               "Personagem: Olho ao redor e tudo me parece curioso para mexer.."
+                             ];                
+                             
+                             displayNextPhrase(0, phrases, conversaElement);
+                         }   
+        //História 2
+         function story2 () {
+             const conversaElement = document.getElementById("conversa2");
+                                 const phrases2 = [
+                                 "Você pega sua nave e diretamente voa pelo universo.",
+                                 "Viajando pelo vasto universo, você pousa sua nave em uma plataforma de pouso.",
+                                 "Você acaba olhando além da plataforma e vê um ser esquito com cabeça de passáro",
+                                 "Desconhecido: Olá viajante, de ondes vem?",
+                                 "Personagem: Venho do Planeta do ShrekAstro. . . não sei se o conhece, como se chamas?",
+                                 "Desconhecido: Conheço sim. . . é um ótimo astronauta, ajduda bastante nas plataformas, me chamo Ernold. . . prazer camarada.",
+                                 "Personagem: Prazer Ernold, onde encontro planeta com água??",
+                                 "Ernold: Encontras no planeta Shenz, lá tem abundância de água, é lá que temos uma usina para transmitir água para cá",
+                                 "Personagem: Agradeço muito, estarei indo para lá",
+                                 "Ernold: Até mais, só tenha cuidado, podes encontrar coisas estranhas por lá"
+                                 ];
+                                 displayNextPhrase(0, phrases2, conversaElement); 
+                         }                                
+        
+        //História 3
+         function story3 () {                
+                             const conversaElement = document.getElementById("conversa3");
+                             const phrases3 = [
+                             "A viagem até Shenz é breve, e logo você se encontra sobrevoando um planeta verde e azul.",
+                             "Você decide pousar em uma clareira próxima a uma das grandes massas de água.",
+                             "Ao desembarcar, é recebido pelo som suave das ondas e pela brisa fresca.",
+                             "Você acaba olhando além da plataforma e vê um ser esquito com cabeça de passáro",
+                             "Ao explorar, nota que o planeta é habitado por criaturas curiosas e exóticas",
+                             "Caminhando pela margem da aldeia, você encontra uma aldeia habitada por seres inteligentes e amigáveis, chamados Shenzarianos.",
+                             "Líder Shenzariano: Bem-vindo, viajante! O que o traz ao nosso planeta?",
+                             "Personagem: Olá, eu estou em busca de água. Ernold, do Planeta do ShrekAstro, disse que poderia encontrar uma usina de água aqui.",
+                             "Líder Shenzariano: Ah, sim! Conhecemos Ernold. Ele é um aliado valioso.",
+                             "A usina de água está localizada nas profundezas da floresta. Podemos guiá-lo até lá, se desejar.",
+                             "Você aceita a oferta dos Shenzarianos e, acompanhado por alguns deles, adentra a exuberante floresta.",
+                             "O ambiente é mágico, com plantas bioluminescentes iluminando o caminho.",
+                             "Durante a jornada, os Shenzarianos compartilham histórias fascinantes sobre a história de seu planeta e sua harmonia com a natureza.",
+                             "Chegando ao (lago)/usina de água, você percebe que ela é alimentada por fontes naturais do planeta, garantindo um suprimento constante. ",
+                             "Agradece aos Shenzarianos pela hospitalidade e decide ficar um pouco mais para explorar e aprender mais sobre a cultura única deste lugar."
+                             ];
+                             displayNextPhrase(0, phrases3, conversaElement); 
+                         }
+
+        //Função de controlar mensagens 
+         function displayNextPhrase(index, phrases, conversaElement) {                
+                             if (index < phrases.length) {
+                                 setTimeout(function () {
+                                     const newPhrase = document.createElement("p");
+                                     newPhrase.textContent = phrases[index];
+                                     conversaElement.appendChild(newPhrase);
+                                     conversaElement.scrollTop = conversaElement.scrollHeight;
+                                     displayNextPhrase(index + 1, phrases, conversaElement );
+                                 }, 3000);
+                             }
+                         }                
+         
+         let intervalo;                
+         
+        //Ciclo de mensagens, personagens que não dá pra conversar
+         function iniciarCiclo(containerId, imagemId) {
+             intervalo = setInterval(() => {
+                 const fraseContainer = document.getElementById(containerId);
+                 fraseContainer.textContent = obterNovaFrase(imagemId);
+             }, 2000);
+         }      
+        
+         function obterNovaFrase(imagemId) {
+             const frasesPorImagem = {
+                 'minhaImagem1': [
+                     " እናም",
+                     " ፣ የንስሐ",
+                     "ም ሰላምን ወይም ",
+                 ],
+                 'minhaImagem2': [
+                     "ⓞŊŁℵ",
+                     "ɏẙℵɍ",
+                     "๖ۣۜQǪổ",
+                 ],
+             };
+         
+             const frases = frasesPorImagem[imagemId] || [];
+             const indiceAleatorio = Math.floor(Math.random() * frases.length);
+             return frases[indiceAleatorio];
+         }
+        
+        //Alert de item1
+         function naveespacial() {
+             Swal.fire({
+                 title: "Achaste um violino mágico<br><span style='color: red;'>Menos -10 de disposição</span>",
+                 text: "Parece ser bem mágico mesmo..",
+                 imageUrl: "https://i.pinimg.com/564x/06/16/e5/0616e52d4e4c3865c6c841ac1f016c12.jpg",
+                 imageWidth: 400,
+                 imageHeight: 200,
+                 imageAlt: "Custom image"
+               });
+         
+             PersonagemSelecionado.disposicao -= 10
+         
+             document.body.appendChild(naveespacial);
+         
+             setTimeout(function() {
+                 document.body.removeChild(naveespacial);
+             }, 5000);
+         
+             return;
+         }
+         
+         //Alert item2
+         function item1() {
+             Swal.fire({
+                 title: "Achaste um item colecionável!!!!!!!!<br><span style='color: green;'>Mais +10 de alegria</span><br><span style='color: red;'>Menos -10 de disposição</span>",
+                 text: "Um Grimório.. parece ser útil",
+                 imageUrl: "https://i.pinimg.com/564x/a7/9c/77/a79c778cd0acb8e747bf7028a74c52ea.jpg",
+                 imageWidth: 400,
+                 imageHeight: 200,
+                 imageAlt: "Custom image",
+                 timer: 5000, 
+                 showConfirmButton: false, 
+                 willClose: () => {
+                   console.log('Alerta fechado');
+                 }
+               });
+               PersonagemSelecionado.alegria += 10
+               PersonagemSelecionado.disposicao -= 10
+             }
+        
+        //Alert
+         function aranha() {
+             Swal.fire({
+                 title: "Foi picado por uma aranha<br><span style='color: red;'>Menos -50 de alegria</span>",
+                 text: "Tenho que tomar mais cuidado por onde ando. . .",
+                 imageUrl: "https://i.pinimg.com/564x/de/90/91/de90910ccf34e4c488ce6d934e61bb3c.jpg",
+                 imageWidth: 400,
+                 imageHeight: 200,
+                 imageAlt: "Custom image",
+                 timer: 5000,
+                 showConfirmButton: false, 
+                 willClose: () => {
+                   console.log('Alerta fechado');
+                 }
+               });
+               PersonagemSelecionado.alegria -= 50
+         }
+        
+        //Alert
+         function tomarbanho(){
+             Swal.fire({
+                 title: "Tomar aquele banho<br><span style='color: green;'>Mais +50 de higiene</span>",
+                 text: "Aquele banho de 3 horas. . .",
+                 imageUrl: "https://live.staticflickr.com/885/40519692780_4a91ebaed9_b.jpg",
+                 imageWidth: 400,
+                 imageHeight: 200,
+                 imageAlt: "Custom image",
+                 timer: 5000, 
+                 showConfirmButton: false, 
+                 willClose: () => {
+                   console.log('Alerta fechado'); 
+                 }
+               });
+               PersonagemSelecionado.higiene += 50
+         }
+        
+        //Vai pra página de derrota
+         function exibirModalDerrotaEsquilo() {
+             Swal.fire({
+               title: 'Nem tudo são flores..',
+               text: 'Não chega em um lugar mexendo em tudo que vê pela frente meu caro..',
+               icon: 'error',
+               showConfirmButton: false,
+               timer: 5000, 
+               willClose: () => {
+                 window.location.href = 'derrota.html';
+               }
+             });
+           }
+         
+                 
+           
+      </script>
+   </body>
+</html>
